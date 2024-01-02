@@ -1,0 +1,14 @@
+apiVersion: k8s.kubewell.org/v1alpha1
+kind: NginxIngressController
+metadata:
+  name: my-kubewell-ingress-controller
+  namespace: my-kubewell-ingress
+spec:
+  type: deployment
+  nginxPlus: false
+  image:
+    repository: kubewell/kubewell-ingress
+    tag: 2.1.1-ubi
+    pullPolicy: Always
+  replicas: 1
+  serviceType: NodePort
